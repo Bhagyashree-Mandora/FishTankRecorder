@@ -1,4 +1,8 @@
 package main.java;
 
-public interface Fish {
+public abstract class Fish {
+
+    public abstract Food getFoodType();
+
+    public abstract int getAmountOfFoodPerFeed();
 }
