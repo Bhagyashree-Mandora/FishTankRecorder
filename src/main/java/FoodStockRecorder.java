@@ -2,9 +2,6 @@ package main.java;
 
 import java.util.List;
 
-import static main.java.Food.SEAWEED;
-import static main.java.Food.SNAIL;
-
 public class FoodStockRecorder {
 
     List<List<Integer>> foodStockRecords;
@@ -14,10 +11,8 @@ public class FoodStockRecorder {
     }
 
     public int findAverageFoodPerDay(Fish fish, int numberOfFish) {
-//        System.out.println(fish.getFoodType());
         int totalFoodOfType = calculateTotalFoodOfType(fish.getFoodType().ordinal());
         int totalDays = getTotalDays();
-//        return 0;
         return totalFoodOfType/(numberOfFish*totalDays);
     }
 

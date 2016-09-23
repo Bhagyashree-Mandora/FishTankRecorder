@@ -15,19 +15,6 @@ public class Main {
         System.out.print("Enter total number of Angelfish in the tank: ");
         int nAngelfish = Integer.valueOf(scanner.next());
 
-//        List<Fish> fishesInTank = new ArrayList<>();
-//        for (int i = 0; i < nGoldFish; i++) {
-//            fishesInTank.add(new GoldFish());
-//        }
-//
-//        for (int i = 0; i < nSwordTail; i++) {
-//            fishesInTank.add(new SwordTail());
-//        }
-//
-//        for (int i = 0; i < nAngelfish; i++) {
-//            fishesInTank.add(new Angelfish());
-//        }
-
         List<List<Integer>> foodStockRecords = new ArrayList<>();
         List<Integer> day1Food = new ArrayList<>();
         day1Food.add(40);
@@ -71,6 +58,4 @@ public class Main {
         System.out.println("Average food per day = " + angelfishAvgFood + angelfish.getFoodType());
         System.out.println("Average times fed per day = " + angelfishTimesFed);
     }
-
-
 }
