@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import static main.java.Food.SEAWEED;
+import static main.java.Food.SNAIL;
 import static main.java.Food.WORM;
 
 public class FoodStockRecorder {
@@ -16,6 +18,19 @@ public class FoodStockRecorder {
         int nSwordTail = Integer.valueOf(scanner.next());
         System.out.print("Enter total number of Angelfish in the tank: ");
         int nAngelfish = Integer.valueOf(scanner.next());
+
+        List<Fish> fishesInTank = new ArrayList<>();
+        for (int i = 0; i < nGoldFish; i++) {
+            fishesInTank.add(new GoldFish());
+        }
+
+        for (int i = 0; i < nSwordTail; i++) {
+            fishesInTank.add(new SwordTail());
+        }
+
+        for (int i = 0; i < nAngelfish; i++) {
+            fishesInTank.add(new Angelfish());
+        }
 
         List<List<Integer>> foodStockRecords = new ArrayList<>();
         List<Integer> day1Food = new ArrayList<>();
@@ -37,9 +52,19 @@ public class FoodStockRecorder {
         foodStockRecords.add(day2Food);
         foodStockRecords.add(day3Food);
 
+        Integer totalWormsConsumed = 0;
+        Integer totalSnailsConsumed = 0;
+        Integer totalSeaweedConsumed = 0;
+        int totalDays = foodStockRecords.size();
+        System.out.println(totalDays);
+
         for (List<Integer> record : foodStockRecords ) {
-            System.out.println(record.get(WORM.ordinal()));
+            totalWormsConsumed += record.get(WORM.ordinal());
+            totalSnailsConsumed += record.get(SNAIL.ordinal());
+            totalSeaweedConsumed += record.get(SEAWEED.ordinal());
         }
+
+        
 
     }
 }
